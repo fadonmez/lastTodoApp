@@ -1,0 +1,7 @@
+.main {
+  @apply flex flex-col gap-4 h-screen items-center justify-center bg-gray-800;
+}
+
+.card {
+  @apply flex flex-col items-center justify-center w-[500px] bg-slate-400;
+}

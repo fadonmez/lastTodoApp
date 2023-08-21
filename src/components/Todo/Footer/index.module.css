@@ -1,0 +1,15 @@
+.footer {
+  @apply relative flex items-center justify-center w-full h-10 bg-white border;
+}
+
+.nav {
+  @apply flex items-center gap-x-4;
+}
+
+.btn {
+  @apply p-1 hover:border hover:border-gray-500 hover:rounded;
+}
+
+.info {
+  @apply absolute left-0 ml-4 text-sm text-gray-600;
+}
