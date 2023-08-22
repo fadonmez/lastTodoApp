@@ -24,6 +24,18 @@ function DataProvider({ children }) {
     fetchData();
     console.log(todos);
   };
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:3000/Todos/${id}`);
+    fetchData();
+    console.log(todos);
+  };
+
+  const updateTask = async (id, updatedTask) => {
+    await axios.put(`http://localhost:3000/Todos/${id}`, updatedTask);
+    fetchData();
+    console.log(todos);
+  };
   const data = {
     todos,
     setTodos,
@@ -31,6 +43,8 @@ function DataProvider({ children }) {
     addTask,
     activeTasks,
     setActiveTasks,
+    handleDelete,
+    updateTask,
   };
   return <sharedData.Provider value={data}>{children}</sharedData.Provider>;
 }

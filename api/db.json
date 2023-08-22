@@ -1,46 +1,16 @@
 {
   "Todos": [
     {
-      "todo": "a",
+      "todo": "burunsal",
       "value": 10,
-      "isFinished": true,
+      "isFinished": false,
       "id": 1
     },
     {
-      "todo": "b",
+      "todo": "ahbapbpa",
       "value": 10,
-      "isFinished": true,
-      "id": 2
-    },
-    {
-      "todo": "c",
-      "value": 10,
-      "isFinished": true,
+      "isFinished": false,
       "id": 3
-    },
-    {
-      "todo": "d",
-      "value": 10,
-      "isFinished": true,
-      "id": 4
-    },
-    {
-      "todo": "f",
-      "value": 10,
-      "isFinished": true,
-      "id": 5
-    },
-    {
-      "todo": "q",
-      "value": 10,
-      "isFinished": true,
-      "id": 6
-    },
-    {
-      "todo": "ds",
-      "value": 10,
-      "isFinished": true,
-      "id": 7
     }
   ]
 }

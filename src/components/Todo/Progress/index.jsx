@@ -9,7 +9,7 @@ import {
 
 export default function Progress({ percentage }) {
   return (
-    <Card className="w-full h-full border-none rounded-none bg-gradient-to-br from-violet-500 to-fuchsia-500 w">
+    <Card className="w-full h-full border-none rounded-none bg-gradient-to-br from-blue-500 to-fuchsia-500 w">
       <CardBody className="items-center justify-center pb-0">
         <CircularProgress
           classNames={{

@@ -43,8 +43,6 @@ export default function Todo() {
       }
     });
     setPercentage(totalPercentage);
-
-    console.log(totalPercentage);
   }, [todos]);
 
   return (

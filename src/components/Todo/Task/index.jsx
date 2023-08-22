@@ -6,8 +6,10 @@ import axios from "axios";
 import cn from "classnames";
 
 export default function Task({ task }) {
-  const { todos, fetchData } = useContext(sharedData);
+  const { todos, fetchData, handleDelete, updateTask } = useContext(sharedData);
   const [isChecked, setIsChecked] = useState(task.isFinished);
+  const [isUpdate, setIsUpdate] = useState(false);
+  const [value, setValue] = useState(task.todo);
 
   const valueChange = async () => {
     try {
@@ -27,6 +29,13 @@ export default function Task({ task }) {
     }
   };
 
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    task.todo = value;
+    updateTask(task.id, task);
+    setIsUpdate(false);
+  };
+
   return (
     <Card radius="none">
       <CardBody className="grid items-center justify-center grid-cols-12">
@@ -36,10 +45,36 @@ export default function Task({ task }) {
           color="primary"
           onValueChange={valueChange}
         ></Checkbox>
-        <p className={cn("col-span-10", { "line-through": isChecked })}>
-          {task.todo}
-        </p>
-        <button className="col-span-1 text-gray-300 transition-colors hover:text-red-500">
+        {isUpdate ? (
+          <form
+            aria-label="Update Mode"
+            onSubmit={handleUpdate}
+            className="w-full col-span-10"
+          >
+            <input
+              aria-label="Update Mode"
+              type="text"
+              className="w-full py-2.5 outline-none border border-gray-500"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </form>
+        ) : (
+          <button
+            aria-label="Update Mode"
+            onClick={() => setIsUpdate(true)}
+            className="col-span-10 text-start"
+          >
+            <p className={cn("col-span-10", { "line-through": isChecked })}>
+              {task.todo}
+            </p>
+          </button>
+        )}
+        <button
+          onClick={() => handleDelete(task.id)}
+          type="submit"
+          className="col-span-1 text-gray-300 transition-colors hover:text-red-500"
+        >
           <AiOutlineClose size={20} />
         </button>
       </CardBody>
