@@ -16,7 +16,7 @@ function DataProvider({ children }) {
       const todosData = response.data;
       setTodos(todosData);
     } catch (error) {
-      console.error("Veri alma hatası:", error);
+      console.error("Data Error:", error);
     }
   };
 
