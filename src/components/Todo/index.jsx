@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import styles from "./index.module.css";
 import Title from "./Title";
@@ -7,6 +8,7 @@ import TaskList from "./TaskList";
 import sharedData from "../../../context/data";
 import Footer from "./Footer";
 import Progress from "./Progress";
+
 export default function Todo() {
   const { fetchData, todos, addTask, activeTasks, setActiveTasks } =
     useContext(sharedData);
@@ -48,35 +50,36 @@ export default function Todo() {
   return (
     <div className={styles.main}>
       <Title title="todos" />
-      <div className={styles.card}>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <Input
-            radius="none"
-            placeholder="What needs to be done?"
-            value={value}
-            onChange={(e) => {
-              setValue(e.target.value);
-            }}
-            startContent={
-              <button
-                type="button"
-                className="transition-all hover:scale-125"
-                onClick={() => console.log("clicked")}
-              >
-                <AiOutlineArrowDown
-                  size={20}
-                  color="#ccc"
-                  className="flex-shrink-0 text-xl pointer-events-none text-default-400"
-                />
-              </button>
-            }
-          />
-        </form>
-        <TaskList />
-        <Footer activeTasks={activeTasks} />
-      </div>
-      <div className={styles.card}>
-        <Progress percentage={percentage} />
+      <div className={styles.container}>
+        <div className={styles.card}>
+          <form className="w-full" onSubmit={handleSubmit}>
+            <Input
+              radius="none"
+              placeholder="What needs to be done?"
+              value={value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
+              startContent={
+                <button
+                  type="button"
+                  className="transition-all hover:scale-125"
+                >
+                  <AiOutlineArrowDown
+                    size={20}
+                    color="#ccc"
+                    className="flex-shrink-0 text-xl pointer-events-none text-default-400"
+                  />
+                </button>
+              }
+            />
+          </form>
+          <TaskList />
+          <Footer activeTasks={activeTasks} />
+        </div>
+        <div className={styles.card}>
+          <Progress percentage={percentage} />
+        </div>
       </div>
     </div>
   );

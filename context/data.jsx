@@ -8,6 +8,7 @@ function DataProvider({ children }) {
   const [activeTasks, setActiveTasks] = useState(
     todos.filter((task) => !task.isFinished).length
   );
+  const [mode, setMode] = useState("all");
 
   const fetchData = async () => {
     try {
@@ -21,8 +22,8 @@ function DataProvider({ children }) {
 
   const addTask = async (task) => {
     await axios.post("http://localhost:3000/Todos", task);
+    console.log("Task added to server");
     fetchData();
-    console.log(todos);
   };
 
   const handleDelete = async (id) => {
@@ -36,6 +37,20 @@ function DataProvider({ children }) {
     fetchData();
     console.log(todos);
   };
+
+  const getTodos = () => {
+    switch (mode) {
+      case "all":
+        return todos;
+      case "active":
+        return todos.filter((task) => !task.isFinished);
+      case "completed":
+        return todos.filter((task) => task.isFinished);
+      default:
+        return todos;
+    }
+  };
+
   const data = {
     todos,
     setTodos,
@@ -45,6 +60,9 @@ function DataProvider({ children }) {
     setActiveTasks,
     handleDelete,
     updateTask,
+    mode,
+    setMode,
+    getTodos,
   };
   return <sharedData.Provider value={data}>{children}</sharedData.Provider>;
 }

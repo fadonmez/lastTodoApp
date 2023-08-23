@@ -10,6 +10,14 @@
   @apply p-1 hover:border hover:border-gray-500 hover:rounded;
 }
 
+.activeBtn {
+  @apply text-red-500 transition-colors border-red-500;
+}
+
 .info {
   @apply absolute left-0 ml-4 text-sm text-gray-600;
+}
+
+.total {
+  @apply absolute right-0 mr-4 text-sm text-gray-600;
 }

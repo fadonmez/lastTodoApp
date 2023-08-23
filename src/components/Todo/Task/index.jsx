@@ -45,6 +45,7 @@ export default function Task({ task }) {
           color="primary"
           onValueChange={valueChange}
         ></Checkbox>
+
         {isUpdate ? (
           <form
             aria-label="Update Mode"
@@ -54,7 +55,7 @@ export default function Task({ task }) {
             <input
               aria-label="Update Mode"
               type="text"
-              className="w-full py-2.5 outline-none border border-gray-500"
+              className="w-full p-2.5 outline-none border border-gray-500 rounded select-all"
               value={value}
               onChange={(e) => setValue(e.target.value)}
             />
@@ -63,7 +64,10 @@ export default function Task({ task }) {
           <button
             aria-label="Update Mode"
             onClick={() => setIsUpdate(true)}
-            className="col-span-10 text-start"
+            className={cn(
+              "col-span-10 text-start",
+              isChecked ? "pointer-events-none" : "pointer-events-auto"
+            )}
           >
             <p className={cn("col-span-10", { "line-through": isChecked })}>
               {task.todo}

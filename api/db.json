@@ -1,16 +1,124 @@
 {
   "Todos": [
     {
-      "todo": "burunsal",
-      "value": 10,
-      "isFinished": false,
-      "id": 1
+      "todo": "reactın temelleri öğrenilecek",
+      "value": 5,
+      "isFinished": true,
+      "id": 2
     },
     {
-      "todo": "ahbapbpa",
+      "todo": "component mantığı anlaşılacak",
+      "value": 5,
+      "isFinished": true,
+      "id": 3
+    },
+    {
+      "todo": "props mantığı anlaşılacak",
+      "value": 5,
+      "isFinished": true,
+      "id": 4
+    },
+    {
+      "todo": "lifecycle öğrenilecek",
+      "value": 5,
+      "isFinished": true,
+      "id": 6
+    },
+    {
+      "todo": "basit projeler yapılıp öğrenilenler kavranacak",
+      "value": 5,
+      "isFinished": true,
+      "id": 7
+    },
+    {
+      "todo": "modulecss tanımı öğrenilecek",
+      "value": 5,
+      "isFinished": true,
+      "id": 8
+    },
+    {
+      "todo": "fetching işemleri öğrenilecek",
+      "value": 5,
+      "isFinished": true,
+      "id": 9
+    },
+    {
+      "todo": "routing işlemleri öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 5
+    },
+    {
+      "todo": "formik ile form yönetimleri öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 11
+    },
+    {
+      "todo": "Memoization işlemleri öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 12
+    },
+    {
+      "todo": "contextApi detaylı bir şekilde bitecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 13
+    },
+    {
+      "todo": "gerçek hayat uygulamaları geliştirilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 14
+    },
+    {
+      "todo": "Localization işlemleri öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 15
+    },
+    {
+      "todo": "Test işlemleri öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 16
+    },
+    {
+      "todo": "publishing ve deploy işlemleri öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 17
+    },
+    {
+      "todo": "react redux öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 18
+    },
+    {
+      "todo": "typsescript öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 19
+    },
+    {
+      "todo": "reactta sıklıkla kullanılan kütüphaneler öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 20
+    },
+    {
+      "todo": "firebase öğrenilecek",
+      "value": 5,
+      "isFinished": false,
+      "id": 21
+    },
+    {
+      "todo": "Prototürk kanalının bütün tailwind+react videoları izlenip, uygulaması yapılacak",
       "value": 10,
       "isFinished": false,
-      "id": 3
+      "id": 22
     }
   ]
 }

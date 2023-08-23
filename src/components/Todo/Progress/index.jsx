@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import {
   CircularProgress,
   Card,
@@ -8,6 +8,30 @@ import {
 } from "@nextui-org/react";
 
 export default function Progress({ percentage }) {
+  useEffect(() => {
+    setPercent(percentage);
+  }, [percentage]);
+  const [percent, setPercent] = useState(percentage);
+  const infoText = () => {
+    if (percent > 100) {
+      setPercent(100);
+    }
+    if (percent < 10) {
+      return "Daha fazla çalışmalısın";
+    } else if (percent < 30) {
+      return "İyi gidiyorsun !";
+    } else if (percent < 50) {
+      return "Yolu neredeyse yarıladın!";
+    } else if (percent < 70) {
+      return "Çalışmaya devam!";
+    } else if (percent < 85) {
+      return "Çoğu gitti azı kaldı!";
+    } else if (percent <= 95) {
+      return "Son düzlüktesin!";
+    } else if (percent == 100) {
+      return "Tebrikler, tamamlandın!";
+    }
+  };
   return (
     <Card className="w-full h-full border-none rounded-none bg-gradient-to-br from-blue-500 to-fuchsia-500 w">
       <CardBody className="items-center justify-center pb-0">
@@ -31,7 +55,7 @@ export default function Progress({ percentage }) {
           }}
           variant="bordered"
         >
-          {percentage} Pes etme
+          İlerleme Yüzden : {percent.toFixed(0)} / {infoText()}
         </Chip>
       </CardFooter>
     </Card>
